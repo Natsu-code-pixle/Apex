@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apex Distributor – Product Catalog</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Archivo+Narrow:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#1d1d1f;--mute:#6b6b70;--line:#e3e0dc;--or:#ee6f2d;--or-soft:#fdeee5;--band:#1d1d1f;--bandink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17171a;--ink:#f2f0ed;--mute:#a09d98;--line:#333336;--or:#ff8a4d;--or-soft:#2a2019;--band:#0e0e10;--bandink:#fff}}
+:root[data-theme="dark"]{--bg:#17171a;--ink:#f2f0ed;--mute:#a09d98;--line:#333336;--or:#ff8a4d;--or-soft:#2a2019;--band:#0e0e10;--bandink:#fff}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(56px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.4 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--band);color:var(--bandink);padding:40px 20px 32px;border-bottom:8px solid var(--or)}
+.wrap{max-width:1040px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{width:52px;height:52px;background:var(--or);color:#fff;font:800 22px/52px Archivo,sans-serif;text-align:center;letter-spacing:-1px;transform:skewX(-8deg)}
+.brand b{font:800 20px/1.1 Archivo,sans-serif}.brand small{display:block;color:#cfcac4;font-size:13px;margin-top:3px}
+h1{font:800 clamp(38px,8vw,72px)/.95 Archivo,sans-serif;margin:34px 0 10px;letter-spacing:-1.5px}
+.tag{color:#cfcac4;max-width:520px;margin:0 0 22px}
+.contact{font:500 14px/1.7 "Archivo Narrow",Archivo,sans-serif;color:#fff}
+.contact span{display:inline-block;margin-right:14px;white-space:nowrap}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 20px}
+nav a{flex:none;padding:6px 12px;border-radius:99px;background:var(--or-soft);color:var(--ink);text-decoration:none;font:600 13px Archivo,sans-serif}
+nav a:hover,nav a:focus-visible{background:var(--or);color:#fff;outline:none}
+main{padding:12px 20px 40px}
+section{padding-top:26px;break-inside:avoid-page}
+h2{font:800 26px/1.1 Archivo,sans-serif;margin:0 0 4px;display:flex;align-items:baseline;gap:10px;border-left:6px solid var(--or);padding-left:12px}
+h2 em{font:500 13px Archivo,sans-serif;color:var(--mute);font-style:normal}
+ul{list-style:none;margin:8px 0 0;padding:0;columns:2 420px;column-gap:40px}
+li{break-inside:avoid;display:flex;gap:12px;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line)}
+.n{font-weight:600}.s{display:block;color:var(--mute);font-size:12.5px;font-weight:400;margin-top:1px}
+.p{flex:none;font:700 15px "Archivo Narrow",Archivo,sans-serif;color:var(--or);text-align:right;white-space:nowrap}
+.p.ask{color:var(--mute);font-weight:500;font-size:13px}
+footer{background:var(--band);color:#cfcac4;padding:24px 20px;font-size:13px;border-top:8px solid var(--or)}
+footer b{color:#fff}
+@media print{nav{display:none}header,footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}li{padding:6px 0}section{padding-top:16px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand"><div class="mark">AD</div><div><b>Apex Distributor Pvt. Ltd.</b><small>Kathmandu, Nepal</small></div></div>
+<h1>Product Catalog</h1>
+<p class="tag">Cleaning, hygiene, kitchen and paper supplies for hotels, restaurants, shops and homes.</p>
+<div class="contact"><span>+977 9763370001</span><span>9763370003</span><span>9763370005</span><span>9763370013</span><span>9763370014</span><span>9763370015</span><span>9763370016</span></div>
+</div></header>
+<nav><div class="wrap" id="nav"></div></nav>
+<main><div class="wrap" id="cat"></div></main>
+<footer><div class="wrap"><b>Apex Distributor Pvt. Ltd.</b> · Kathmandu, Nepal · All prices are in Nepali Rupees (Rs) and may change without notice. Call to confirm stock and bulk rates.</div></footer>
+<script>
+const D=`Dispensers
+Liquid Soap Dispenser|1000ml · 24 pcs|1100
+Soap Dispenser Regular|500ml · 20 pcs|790
+Soap Dispenser Marble|500ml · 20 pcs|1100
+Pop Up Dispenser Bamboo|BT25 · 100 pcs|290
+Pop Up Dispenser, Wooden Top White|60 pcs|210
+Pop Up Dispenser|90 pcs|110
+Cleaning Liquids & Fresheners
+Rapid Fresh Phynile|Black / White / Pink · 1 ltr · 15 pcs per carton|110 / 120 / 130
+Dishwash Liquid|1 ltr · 15 pcs, or 500 ml · 30 pcs per carton|240
+Glass Cleaner|500 ml · 30 pcs per carton|90 / 120
+Toilet Cleaner|1 ltr · 15 pcs, or 500 ml · 30 pcs per carton|90 / 120
+Fabric Wash Detergent|15 pcs|250
+Pitambari|72 pkt per carton|35
+Toilet Freshner|240 pcs · Rs 55 × 4|220
+ATM Freshner|96 pcs per carton|100
+Urinal Cubes|36 pkt|275
+Urinal Gel|100 pcs|70
+Washing Machine Tablet|FM083 · 96 pcs per carton|115
+Excel+ Hand Wash|5 litres|730
+Excel+ Toilet Cleaner|5 litres|425
+Excel+ Floor Cleaner|5 litres|525
+Excel+ Glass Cleaner|5 litres|330
+Sponges, Scrubbers & Cloths
+Sponge Pad|3 pcs · 150 pkt per carton|60
+Colour Scrubber|4 pcs · 150 pkt per carton|70
+Green Pad Bio|120 pkts|65
+Magic Steel Sponge|4 × 180 pkts|110
+Magic Steel Sponge, Patta Wala|Calender · 50 pkt|325
+Foam Jali|per pkt|165
+Cellulose Sponge, Dry|Magic Towel MF055 · 500 pkt|135
+Cellulose Sponge, Wet|Magic Towel MF054 · 300 pkt|195
+Micro Fiber Cloth, Pack of 3|Bio · 130 pkt|225
+Micro Fiber Cloth, Single|per piece|85
+Strip Rumal||225
+Yellow Rumal|240 doz|275
+Floor Duster|L 96 doz · XL 72 doz · XXL 64 doz · XXXL 56 doz|275 / 350 / 375 / 475
+Brooms, Mops & Wipers
+Flora Broom|25 pcs|
+Hilife Broom|40 pcs|
+Hello Mop|50 pcs|
+Rider Mini Wiper|60 pcs|
+Glass Wiper BRW|144 pcs|45
+Hand Brush Double|Heavy BS2502 · 50 pcs|35
+Innova Wiper|30 pcs|285
+Iron Brush|24 pcs|110
+Jumbo Steel Round Mop|40 pcs|285
+Pressing Mop|50 pcs|140
+10" T-Mop with Wooden Stick|50 pcs per carton|210
+10" Steel T-Mop with Steel Stick|50 pcs per carton|450
+Namaste Mop|NM1100 · 50 pcs per carton|595
+Silicon Mop|NM1101 · 50 pcs per carton|595
+Metro Wiper|120 pcs|60
+Nano Wiper|80 pcs|70
+Easy Mop BRW|25 pcs|275
+Dry Mop 24" Heavy|25 pcs per carton|550
+Household & Utility
+Rubber Gloves|110 gm · 200 pair|85
+BC Dishwash Gloves, Long|MFT1118 · 200 pair|130
+Rubber Half Inch|30 kg|700
+Tape|250 gm × 72 pcs / 700 gm × 32 pcs|110 / 330
+Puncho Raincoat|300 pcs|165 / 330
+Bike Dori|400 pcs|45
+Bath & Personal Hygiene
+Bath Ball Bio|180 pcs per carton|40
+Bath Belt Bio|240 pcs per carton|90
+Bath Brush Double Color|Crystal handle|135
+Bath Brush PP|Curve stick · 100 pcs per carton|70
+Sauna Body Scruber|BS2507 · 3000 pcs|75
+Toothbrush|TB998 · 288 pcs|45
+Toothbrush|TB999 · 576 pkt|35
+Toothpick C|420 pcs|40
+Toothpick Big|240 pcs|60
+Toothpick Panda|200 pkt|85 per pkt
+Bio Cotton Buds Fancy|100 pcs (TP002) × 240 pcs|100
+Bio Cotton Buds Fancy|200 pcs (M419) × 240 pcs|100
+Cotton Buds Brown Box|100 pcs (TP006) × 240 pcs|90
+Kitchen & Food Packaging
+8 MM Paper Straw|100 pcs|135
+Magic Straw Chinese|100 pkts|100
+Smoothie Straw|100 pkt|150
+Brio Cheers Glass|350 ml × 2000 pcs|10
+Buffa Cap, Blue / White|80 pkt|170
+Paper Glass Premium|150 ml × 5500 pcs|
+Paper Glass Single Wall|250 ml × 2000 pcs|8
+Paper Glass Diamond|330 ml × 2500 pcs|3
+Paper Glass Ripple|250 ml × 1000 pcs|10
+Paper Glass Double Wall|250 ml × 1000 pcs|10
+Parcel Meal Box, 2CP Black|2506 × 750 pcs|23
+Parcel Meal Box, 3CP Black|2506 × 450 pcs|23
+Parcel Meal Box, 4CP Black|2505 × 450 pcs|35
+Parcel Meal Box, 5CP Black|2502 × 450 pcs|35
+Parcel Meal Box, 8CP Black|2501 × 300 pcs|50
+Burger Box|800 pcs|12
+Pizza Box|9 / 10 / 12 inches|16 / 18 / 24
+Sandwich Box|600 pcs|
+Sandwich Box Chinese|4000 pcs|
+Sauce Bowl|35 ml × 7000 pcs|2
+Fancy Plate No. 10|150 pkts|110
+Fancy Plate No. 12|100 pkts|165
+Butter Paper Roll|500 gm|350
+Butter Paper Roll|1 KG|700
+Foil 1 KG Alupak|24 roll|900
+Foil Bhari|24 roll|1000
+Foil|700 gm × 24 roll|550
+Foil Taj|800 gm × 24 roll|675
+Plastic Wrap|450 gm × 48 roll|340
+Plastic Wrap Best Fresh|6 roll (800 + 800)|550
+Plastic Wrap Blue|136 roll|115
+Garbage Bag|45×55 × 100 roll · 60×80 × 50 roll|160 / 120 / 100
+Garbage Bag Big|per KG|315 per kg
+Paper Products & Tissues
+Box Tissue Silk Route|100 pull × 64 box|70
+Box Tissue Biocare|Feathers / Prestige / Premium · 100 pull × 64 box|70
+Box Tissue Bocare|Feathers / Prestige / Premium · 200 pull × 48 box|120
+Napkin Pup N Up Feathers|144 pkt|15
+Napkin Pup N Up Puff|144 / 132 pkt|
+Napkin Soft Feathers|50 pkts|35
+Dinner Napkin|50 pkts|100
+Packet Tissue Jempo|60 pkt|60
+Hand Towel|40 pkts|100
+Wet Tissue Velvet|80 pcs|70
+Kitchen Towel American|24 pkts|220
+Kitchen Towel Feathers|48 pkts|100
+Toilet Paper Prestige|Coreless · 10 pkts|265
+Toilet Paper Velvet|140 gm × 6 pkts|500
+Toilet Paper Green Tea|140 gm × 6 pkts|695
+Toilet Paper Feathers, 2 in 1|140 gm · 30 pkts|110
+Toilet Paper Feathers, 4 in 1|140 gm · 15 pkts|220
+Toilet Paper Feathers|140 gm · 6 pkts|500
+Toilet Paper Feathers|120 gm × 6 pkts|
+Toilet Paper Feathers|100 gm × 10 pkt|395
+Toilet Paper Feathers|70 gm × 10 pkts|275
+Toilet Paper Feathers|60 gm × 10 pkts|265
+Toilet Paper Feathers|Pack of 10|450`;
+const cats=[];
+D.split("\n").forEach(l=>{const a=l.split("|");if(a.length<3)cats.push({t:l,i:[]});else cats[cats.length-1].i.push(a)});
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+document.getElementById("nav").innerHTML=cats.map((c,k)=>`<a href="#c${k}">${esc(c.t)}</a>`).join("");
+document.getElementById("cat").innerHTML=cats.map((c,k)=>`<section id="c${k}"><h2>${esc(c.t)}<em>${c.i.length} items</em></h2><ul>`+c.i.map(([n,s,p])=>`<li><span class="n">${esc(n)}${s?`<span class="s">${esc(s)}</span>`:""}</span>${p?`<span class="p">Rs ${esc(p)}</span>`:`<span class="p ask">Ask for price</span>`}</li>`).join("")+`</ul></section>`).join("");
+</script>
+</body>
+</html>
